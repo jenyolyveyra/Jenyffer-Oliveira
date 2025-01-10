@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Site da Jeny</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Site da Jeny</h1>
+        <p>Seja bem-vindo(a) ao meu site!</p>
+        <p>Aqui você encontra meu conteúdo completo.</p>
+        <p>Navegue pelos links:</p>
+        <nav>
+            <a href="social.html">Redes Sociais</a>
+            <a href="music.html">Músicas</a>
+            <a href="radio win.html">Rádio Windows</a>
+            <a href="radio and.html">Rádio Android/IOS</a>
+        </nav>
+		    </header>
+
+    <footer>
+        <p>&copy; <span id="year"></span> SITE DA JENY</p>
+    </footer>
+
+    <script>
+        // Atualiza o ano automaticamente
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
