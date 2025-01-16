@@ -14,7 +14,7 @@
             padding: 0;
         }
 
-        header {
+        header, footer {
             background-color: #333;
             color: white;
             text-align: center;
@@ -23,15 +23,6 @@
 
         header h1 {
             margin: 0;
-        }
-
-        header a {
-            color: white;
-            text-decoration: none;
-        }
-
-        header a:hover {
-            text-decoration: underline;
         }
 
         .radio-player {
@@ -82,9 +73,7 @@
 <body>
     <header>
         <h1>Rádio Android/IOS</h1>
-        <a href="index.html">Início</a>
     </header>
-
     <main>
     <section class="radio-player">
         <audio id="radio-player" src="https://stream-154.zeno.fm/u4xlxliy9owvv" type="audio/mpeg" autoplay></audio>
@@ -154,5 +143,14 @@
         document.addEventListener('DOMContentLoaded', setupTouchControls);
     </script>
     </main>
+
+    <footer>
+<p id="year"></p>
+    </footer>
+
+    <script>
+        // Atualiza o ano automaticamente
+        document.getElementById("year").textContent = "© "+new Date().getFullYear()+" SITE DA JENY";
+    </script>
 </body>
 </html>
