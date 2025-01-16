@@ -14,7 +14,7 @@
             padding: 0;
         }
 
-        header {
+        header, footer {
             background-color: #333;
             color: white;
             text-align: center;
@@ -23,15 +23,6 @@
 
         header h1 {
             margin: 0;
-        }
-
-        header a {
-            color: white;
-            text-decoration: none;
-        }
-
-        header a:hover {
-            text-decoration: underline;
         }
 
         main {
@@ -62,7 +53,6 @@
 <body>
     <header>
         <h1>Redes Sociais</h1>
-        <a href="index.html">Início</a>
     </header>
     <main>
         <ul>
@@ -79,5 +69,14 @@
             <li><a href="https://wattpad.com/user/jenyolyveyra" target="_blank">Wattpad</a></li>
         </ul>
     </main>
+
+    <footer>
+<p id="year"></p>
+    </footer>
+
+    <script>
+        // Atualiza o ano automaticamente
+        document.getElementById("year").textContent = "© "+new Date().getFullYear()+" SITE DA JENY";
+    </script>
 </body>
 </html>
