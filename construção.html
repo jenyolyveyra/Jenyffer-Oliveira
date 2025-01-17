@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Site da Jeny - Em Construção</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, footer {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .message {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Site da Jeny</h1>
+        <p class="message">Este site está em construção. Em breve, você poderá acessar todo o conteúdo!</p>
+    </div>
+
+    <footer>
+<p id="year"></p>
+    </footer>
+
+    <script>
+        // Atualiza o ano automaticamente
+        document.getElementById("year").textContent = "© "+new Date().getFullYear()+" SITE DA JENY";
+    </script>
+</body>
+</html>
