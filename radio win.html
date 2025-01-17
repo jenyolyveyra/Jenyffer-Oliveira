@@ -5,124 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rádio Windows - Site da Jeny</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header, footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        .radio-player {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .radio-player audio {
-            display: none; /* Ocultar o player de áudio */
-        }
-
-        .commands {
-            margin: 20px auto;
-            max-width: 600px;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .commands ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .commands li {
-            padding: 5px 0;
-            font-size: 16px;
-        }
-
-        .commands li span {
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Referência ao arquivo CSS -->
 </head>
 <body>
     <header>
         <h1>Rádio Windows</h1>
     </header>
     <main>
-    <section class="radio-player">
-        <audio id="radio-player" src="https://stream-154.zeno.fm/u4xlxliy9owvv" type="audio/mpeg" autoplay></audio>
-    </section>
+        <section class="radio-player">
+            <audio id="radio-player" src="https://stream-154.zeno.fm/u4xlxliy9owvv" type="audio/mpeg" autoplay></audio>
+        </section>
 
-    <section class="commands">
-        <h1>Comandos do Teclado</h1>
-        <ul>
-            <li><span>P:</span> Reproduzir/Pausar</li>
-            <li><span>Seta Esquerda:</span> Retroceder 5 segundos</li>
-            <li><span>Seta Direita:</span> Avançar 5 segundos</li>
-            <li><span>Seta Cima:</span> Aumentar volume</li>
-            <li><span>Seta Baixo:</span> Diminuir volume</li>
-            <li><span>A:</span> Ativar/Desativar áudio</li>
-        </ul>
-    </section>
-
-    <script>
-        function setupRadioPlayerControls() {
-            const audio = document.getElementById('radio-player');
-
-            document.addEventListener('keydown', function (event) {
-                switch (event.key) {
-                    case 'p': // Reproduzir/Pausar
-                        audio.paused ? audio.play() : audio.pause();
-                        break;
-                    case 'ArrowLeft': // Retroceder
-                        audio.currentTime = Math.max(0, audio.currentTime - 5);
-                        break;
-                    case 'ArrowRight': // Avançar
-                        audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
-                        break;
-                    case 'ArrowUp': // Aumentar volume
-                        audio.volume = Math.min(1, audio.volume + 0.1);
-                        break;
-                    case 'ArrowDown': // Diminuir volume
-                        audio.volume = Math.max(0, audio.volume - 0.1);
-                        break;
-                    case 'a': // Ativar/Desativar áudio
-                        audio.muted = !audio.muted;
-                        break;
-                }
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', setupRadioPlayerControls);
-    </script>
+        <section class="commands">
+            <p>Comandos do Teclado</p>
+            <ul>
+                <li><span>P:</span> Reproduzir/Pausar</li>
+                <li><span>Seta Esquerda:</span> Retroceder 5 segundos</li>
+                <li><span>Seta Direita:</span> Avançar 5 segundos</li>
+                <li><span>Seta Cima:</span> Aumentar volume</li>
+                <li><span>Seta Baixo:</span> Diminuir volume</li>
+                <li><span>A:</span> Ativar/Desativar áudio</li>
+            </ul>
+        </section>
     </main>
 
     <footer>
-<p id="year"></p>
+        <p id="year"></p>
     </footer>
 
-    <script>
-        // Atualiza o ano automaticamente
-        document.getElementById("year").textContent = "© "+new Date().getFullYear()+" SITE DA JENY";
-    </script>
+    <script src="footer.js"></script> <!-- Referência ao script do footer -->
+    <script src="radio-keyboard.js"></script> <!-- Referência ao script dos controles -->
 </body>
 </html>
