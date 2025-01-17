@@ -5,152 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rádio Android/IOS - Site da Jeny</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header, footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        .radio-player {
-            display: none; /* Ocultar o player de áudio */
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .commands {
-            margin: 20px auto;
-            max-width: 600px;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .commands ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .commands li {
-            padding: 5px 0;
-            font-size: 16px;
-        }
-
-        .commands li span {
-            font-weight: bold;
-        }
-
-        .alert {
-            display: none;
-            background-color: #ffcc00;
-            color: #333;
-            padding: 10px;
-            text-align: center;
-            margin: 10px 0;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Rádio Android/IOS</h1>
     </header>
+
     <main>
-    <section class="radio-player">
-        <audio id="radio-player" src="https://stream-154.zeno.fm/u4xlxliy9owvv" type="audio/mpeg" autoplay></audio>
-    </section>
-
-    <section class="commands">
-        <h1>Comandos por Gestos</h1>
-        <ul>
-            <li><span>Deslizar para a esquerda:</span> Retroceder 5 segundos</li>
-            <li><span>Deslizar para a direita:</span> Avançar 5 segundos</li>
-            <li><span>Deslizar para cima:</span> Aumentar volume</li>
-            <li><span>Deslizar para baixo:</span> Diminuir volume</li>
-        </ul>
-    </section>
-
-    <script>
-        function setupTouchControls() {
-            const audio = document.getElementById('radio-player');
-            let startX = 0;
-            let startY = 0;
-
-            audio.addEventListener('canplay', () => {
-                audio.play(); // Garantindo que o áudio comece a tocar
-            });
-
-            document.addEventListener('touchstart', (e) => {
-                const touch = e.touches[0];
-                startX = touch.clientX;
-                startY = touch.clientY;
-            });
-
-            document.addEventListener('touchend', (e) => {
-                const touch = e.changedTouches[0];
-                const diffX = touch.clientX - startX;
-                const diffY = touch.clientY - startY;
-
-                if (Math.abs(diffX) > Math.abs(diffY)) {
-                    // Deslizar horizontalmente
-                    if (diffX > 50) {
-                        // Deslizar para a direita
-                        audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
-                    } else if (diffX < -50) {
-                        // Deslizar para a esquerda
-                        audio.currentTime = Math.max(0, audio.currentTime - 5);
-                    }
-                } else {
-                    // Deslizar verticalmente
-                    if (diffY > 50) {
-                        // Deslizar para baixo
-                        audio.volume = Math.max(0, audio.volume - 0.1);
-                    } else if (diffY < -50) {
-                        // Deslizar para cima
-                        audio.volume = Math.min(1, audio.volume + 0.1);
-                    }
-                }
-            });
-
-            audio.addEventListener('play', () => {
-                document.getElementById('alert-message').style.display = 'block';
-            });
-
-            audio.addEventListener('pause', () => {
-                document.getElementById('alert-message').style.display = 'none';
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', setupTouchControls);
-    </script>
+        <section class="radio-player">
+            <audio id="radio-player" src="https://stream-154.zeno.fm/u4xlxliy9owvv" type="audio/mpeg" muted autoplay></audio>
+            <p>Use gestos para controlar o player:</p>
+            <p>Se estiver usando leitor de tela, será necessário desativá-lo:</p>
+            <ul>
+                <li>Um dedo deslizando para a direita ou esquerda: Ativar/Desativar o áudio</li>
+                <li>Um dedo deslizando para cima ou para baixo: Aumentar/Diminuir volume (5%)</li>
+            </ul>
+            <button id="play-button">Ativar Áudio</button>
+        </section>
     </main>
 
     <footer>
-<p id="year"></p>
+        <p id="year"></p>
     </footer>
 
-    <script>
-        // Atualiza o ano automaticamente
-        document.getElementById("year").textContent = "© "+new Date().getFullYear()+" SITE DA JENY";
-    </script>
+    <script src="footer.js"></script>
+    <script src="radio-controls.js"></script>
 </body>
 </html>
