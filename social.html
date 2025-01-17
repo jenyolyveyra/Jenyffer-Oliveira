@@ -5,50 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Redes Sociais - Site da Jeny</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header, footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        ul a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        ul a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -71,12 +28,9 @@
     </main>
 
     <footer>
-<p id="year"></p>
+        <p id="year"></p>
     </footer>
 
-    <script>
-        // Atualiza o ano automaticamente
-        document.getElementById("year").textContent = "© "+new Date().getFullYear()+" SITE DA JENY";
-    </script>
+    <script src="footer.js"></script>
 </body>
 </html>
