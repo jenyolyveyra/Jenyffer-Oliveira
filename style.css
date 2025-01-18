@@ -40,3 +40,22 @@ ul a {
 ul a:hover {
     text-decoration: underline;
 }
+
+        button {
+            background-color: #4CAF50; /* Verde */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 8px; /* Bordas arredondadas */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Verde mais escuro no hover */
+        }
